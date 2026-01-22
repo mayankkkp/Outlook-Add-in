@@ -13,8 +13,8 @@
 
   <DisplayName DefaultValue="Need Support"/>
   <Description DefaultValue="Access IT Service Desk and support services for Ericsson employees"/>
-  <IconUrl DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/icon32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/icon@2x.png"/>
+  <IconUrl DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/support32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/support64.png"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
