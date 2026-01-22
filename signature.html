@@ -12,125 +12,125 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
       padding: 20px;
-      min-height: 100vh;
+      color: #333;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 650px;
       margin: 0 auto;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .header {
-      background: white;
-      padding: 25px;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .header h1 {
-      color: #2c3e50;
-      font-size: 26px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
     }
 
     .header p {
-      color: #7f8c8d;
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13px;
+      color: #666;
     }
 
     .content {
-      background: white;
-      padding: 30px;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .alert {
+      padding: 12px;
+      background: #e7f5e9;
+      border-left: 3px solid #28a745;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      display: none;
+      font-size: 13px;
+      color: #155724;
+    }
+
+    .alert.show {
+      display: block;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .form-group label {
       display: block;
-      color: #2c3e50;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 8px;
-      font-size: 14px;
+      color: #333;
+      margin-bottom: 6px;
     }
 
     .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group select {
       width: 100%;
-      padding: 12px;
-      border: 2px solid #e9ecef;
-      border-radius: 8px;
-      font-size: 14px;
-      font-family: 'Segoe UI', sans-serif;
-      transition: border-color 0.3s ease;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 13px;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group select:focus {
       outline: none;
-      border-color: #667eea;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 80px;
+      border-color: #0078d4;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 12px;
     }
 
     .preview-section {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 25px;
-      border: 2px dashed #dee2e6;
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 3px;
+      margin-top: 20px;
+      border: 1px solid #e0e0e0;
     }
 
     .preview-section h3 {
-      color: #2c3e50;
-      font-size: 16px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 12px;
     }
 
     .signature-preview {
       background: white;
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 4px solid #667eea;
+      padding: 16px;
+      border-radius: 3px;
+      border-left: 3px solid #0078d4;
       font-family: Arial, sans-serif;
       font-size: 13px;
-      line-height: 1.6;
-      color: #2c3e50;
+      line-height: 1.5;
+      color: #333;
     }
 
     .signature-preview .name {
-      font-weight: bold;
-      font-size: 16px;
-      color: #667eea;
-      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #0078d4;
+      margin-bottom: 4px;
     }
 
     .signature-preview .title {
-      color: #6c757d;
+      color: #666;
       margin-bottom: 8px;
     }
 
@@ -142,126 +142,90 @@
     .signature-preview .contact-info {
       margin-top: 8px;
       padding-top: 8px;
-      border-top: 1px solid #e9ecef;
+      border-top: 1px solid #e0e0e0;
+      font-size: 12px;
     }
 
     .signature-preview .contact-info div {
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .btn-group {
       display: flex;
       gap: 10px;
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .btn {
       flex: 1;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 8px;
+      padding: 10px 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 600;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      background: white;
+      color: #333;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f5f5f5;
     }
 
     .btn-primary {
-      background: #667eea;
+      background: #0078d4;
       color: white;
+      border-color: #0078d4;
     }
 
     .btn-primary:hover {
-      background: #5568d3;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      background: #106ebe;
+      border-color: #106ebe;
     }
 
-    .btn-secondary {
-      background: #e9ecef;
-      color: #495057;
-    }
-
-    .btn-secondary:hover {
-      background: #dee2e6;
-    }
-
-    .btn-success {
-      background: #10b981;
-      color: white;
-    }
-
-    .btn-success:hover {
-      background: #059669;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-    }
-
-    .alert {
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      display: none;
-    }
-
-    .alert.success {
-      background: #d1fae5;
-      border-left: 4px solid #10b981;
-      color: #065f46;
-    }
-
-    .alert.show {
-      display: block;
-    }
-
-    .helper-text {
-      font-size: 12px;
-      color: #6c757d;
-      margin-top: 5px;
+    .required {
+      color: #d13438;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>✍️ Create Email Signature</h1>
-      <p>Design your professional email signature for Outlook</p>
+      <h1>Create Email Signature</h1>
+      <p>Design your professional email signature</p>
     </div>
     
     <div class="content">
-      <div id="successAlert" class="alert success">
-        ✅ Signature created successfully! You can now use it in your emails.
+      <div id="successAlert" class="alert">
+        Signature created successfully and copied to clipboard.
       </div>
 
       <form id="signatureForm">
         <div class="form-row">
           <div class="form-group">
-            <label for="fullName">Full Name *</label>
-            <input type="text" id="fullName" placeholder="e.g., John Doe" required>
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" placeholder="John Doe" required>
           </div>
           <div class="form-group">
-            <label for="jobTitle">Job Title *</label>
-            <input type="text" id="jobTitle" placeholder="e.g., Senior Engineer" required>
+            <label for="jobTitle">Job Title <span class="required">*</span></label>
+            <input type="text" id="jobTitle" placeholder="Senior Engineer" required>
           </div>
         </div>
 
         <div class="form-group">
           <label for="department">Department</label>
-          <input type="text" id="department" placeholder="e.g., Engineering">
+          <input type="text" id="department" placeholder="Engineering">
         </div>
 
         <div class="form-group">
-          <label for="company">Company *</label>
+          <label for="company">Company <span class="required">*</span></label>
           <input type="text" id="company" value="Ericsson" required>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email Address *</label>
+            <label for="email">Email Address <span class="required">*</span></label>
             <input type="email" id="email" placeholder="john.doe@ericsson.com" required>
           </div>
           <div class="form-group">
@@ -277,39 +241,26 @@
           </div>
           <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" id="location" placeholder="e.g., Pune, India">
+            <input type="text" id="location" placeholder="Pune, India">
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="website">Website</label>
-          <input type="url" id="website" placeholder="https://www.ericsson.com" value="https://www.ericsson.com">
-        </div>
-
         <div class="preview-section">
-          <h3>👁️ Preview</h3>
+          <h3>Preview</h3>
           <div id="signaturePreview" class="signature-preview">
             <div class="name">Your Name</div>
             <div class="title">Your Job Title</div>
             <div class="company">Ericsson</div>
             <div class="contact-info">
-              <div>📧 your.email@ericsson.com</div>
-              <div>📱 Your phone number</div>
-              <div>🌐 https://www.ericsson.com</div>
+              <div>Email: your.email@ericsson.com</div>
+              <div>Phone: Your phone number</div>
             </div>
           </div>
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn btn-secondary" onclick="resetForm()">
-            🔄 Reset
-          </button>
-          <button type="button" class="btn btn-primary" onclick="updatePreview()">
-            👁️ Update Preview
-          </button>
-          <button type="submit" class="btn btn-success">
-            ✅ Create Signature
-          </button>
+          <button type="button" class="btn" onclick="resetForm()">Reset</button>
+          <button type="submit" class="btn btn-primary">Create Signature</button>
         </div>
       </form>
     </div>
@@ -317,13 +268,10 @@
 
   <script>
     Office.onReady(function() {
-      // Auto-update preview on input
-      const inputs = document.querySelectorAll('input, select, textarea');
+      const inputs = document.querySelectorAll('input');
       inputs.forEach(input => {
         input.addEventListener('input', updatePreview);
       });
-      
-      // Initialize preview
       updatePreview();
     });
 
@@ -336,14 +284,12 @@
       const phone = document.getElementById('phone').value;
       const mobile = document.getElementById('mobile').value;
       const location = document.getElementById('location').value;
-      const website = document.getElementById('website').value || 'https://www.ericsson.com';
 
       let contactInfo = '';
-      if (email) contactInfo += `<div>📧 ${email}</div>`;
-      if (phone) contactInfo += `<div>📞 ${phone}</div>`;
-      if (mobile) contactInfo += `<div>📱 ${mobile}</div>`;
-      if (location) contactInfo += `<div>📍 ${location}</div>`;
-      if (website) contactInfo += `<div>🌐 ${website}</div>`;
+      if (email) contactInfo += `<div>Email: ${email}</div>`;
+      if (phone) contactInfo += `<div>Phone: ${phone}</div>`;
+      if (mobile) contactInfo += `<div>Mobile: ${mobile}</div>`;
+      if (location) contactInfo += `<div>Location: ${location}</div>`;
 
       const preview = `
         <div class="name">${fullName}</div>
@@ -360,26 +306,20 @@
     function resetForm() {
       document.getElementById('signatureForm').reset();
       document.getElementById('company').value = 'Ericsson';
-      document.getElementById('website').value = 'https://www.ericsson.com';
       updatePreview();
     }
 
     document.getElementById('signatureForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get the signature HTML
       const signatureHTML = document.getElementById('signaturePreview').innerHTML;
-      
-      // Here you would typically set this as the signature in Outlook
-      // For now, we'll show a success message
       const alert = document.getElementById('successAlert');
       alert.classList.add('show');
       
       setTimeout(() => {
         alert.classList.remove('show');
-      }, 5000);
+      }, 4000);
       
-      // Copy to clipboard
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = signatureHTML;
       document.body.appendChild(tempDiv);
@@ -391,7 +331,6 @@
       
       try {
         document.execCommand('copy');
-        console.log('Signature copied to clipboard');
       } catch (err) {
         console.error('Failed to copy signature');
       }
