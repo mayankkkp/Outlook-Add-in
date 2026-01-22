@@ -12,161 +12,158 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
       padding: 20px;
-      min-height: 100vh;
+      color: #333;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 650px;
       margin: 0 auto;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .header {
-      background: white;
-      padding: 25px;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: center;
+      padding: 20px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .header h1 {
-      color: #2c3e50;
-      font-size: 28px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
     }
 
     .header p {
-      color: #7f8c8d;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 13px;
+      color: #666;
     }
 
     .content {
-      background: white;
-      padding: 30px;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .alert {
+      padding: 12px;
+      background: #e7f5e9;
+      border-left: 3px solid #28a745;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      display: none;
+      font-size: 13px;
+      color: #155724;
+    }
+
+    .alert.show {
+      display: block;
     }
 
     .form-group {
-      margin-bottom: 25px;
+      margin-bottom: 16px;
     }
 
     .form-group label {
       display: block;
-      color: #2c3e50;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 10px;
-      font-size: 15px;
+      color: #333;
+      margin-bottom: 6px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 14px;
-      border: 2px solid #e9ecef;
-      border-radius: 8px;
-      font-size: 14px;
-      font-family: 'Segoe UI', sans-serif;
-      transition: all 0.3s ease;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 13px;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      border-color: #0078d4;
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 100px;
     }
 
     .rating-group {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .rating-option {
       flex: 1;
-      min-width: 60px;
-      padding: 12px;
-      background: #f8f9fa;
-      border: 2px solid #e9ecef;
-      border-radius: 8px;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .rating-option:hover {
-      background: #e9ecef;
+      background: #f0f0f0;
     }
 
     .rating-option input[type="radio"] {
       display: none;
     }
 
-    .rating-option input[type="radio"]:checked + label {
-      color: white;
-    }
-
     .rating-option.selected {
-      background: #667eea;
-      border-color: #667eea;
+      background: #0078d4;
+      border-color: #0078d4;
       color: white;
-      transform: scale(1.05);
     }
 
     .rating-option label {
       cursor: pointer;
-      font-weight: 600;
+      font-size: 20px;
       display: block;
-      font-size: 24px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .rating-option .label-text {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
     }
 
     .category-buttons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
     }
 
     .category-btn {
-      padding: 12px 16px;
-      background: #f8f9fa;
-      border: 2px solid #e9ecef;
-      border-radius: 8px;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 14px;
+      transition: all 0.2s ease;
+      font-size: 12px;
       font-weight: 500;
-      color: #495057;
       text-align: center;
     }
 
     .category-btn:hover {
-      background: #e9ecef;
+      background: #f0f0f0;
     }
 
     .category-btn.selected {
-      background: #667eea;
-      border-color: #667eea;
+      background: #0078d4;
+      border-color: #0078d4;
       color: white;
     }
 
@@ -176,95 +173,66 @@
 
     .btn {
       width: 100%;
-      padding: 16px 24px;
-      border: none;
-      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #0078d4;
+      border-radius: 3px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
-
-    .btn-primary {
-      background: #667eea;
+      background: #0078d4;
       color: white;
+      margin-top: 10px;
+      transition: all 0.2s ease;
     }
 
-    .btn-primary:hover {
-      background: #5568d3;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-    }
-
-    .btn-primary:disabled {
-      background: #cbd5e1;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .alert {
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-      display: none;
-      animation: slideDown 0.3s ease;
-    }
-
-    .alert.success {
-      background: #d1fae5;
-      border-left: 4px solid #10b981;
-      color: #065f46;
-    }
-
-    .alert.show {
-      display: block;
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .btn:hover {
+      background: #106ebe;
+      border-color: #106ebe;
     }
 
     .helper-text {
-      font-size: 13px;
-      color: #6c757d;
-      margin-top: 8px;
-      line-height: 1.5;
-    }
-
-    .required {
-      color: #dc3545;
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
     }
 
     .char-count {
       text-align: right;
-      font-size: 12px;
-      color: #6c757d;
-      margin-top: 5px;
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .required {
+      color: #d13438;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: auto;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>💬 Provide Feedback</h1>
-      <p>Help us improve! Your feedback is valuable to us</p>
+      <h1>Provide Feedback</h1>
+      <p>Help us improve by sharing your feedback</p>
     </div>
     
     <div class="content">
-      <div id="successAlert" class="alert success">
-        ✅ Thank you for your feedback! We appreciate your input and will use it to improve our services.
+      <div id="successAlert" class="alert">
+        Thank you for your feedback. Your input has been submitted successfully.
       </div>
 
       <form id="feedbackForm">
-        <!-- Name and Email -->
         <div class="form-group">
           <label for="name">Your Name <span class="required">*</span></label>
           <input type="text" id="name" placeholder="Enter your full name" required>
@@ -275,17 +243,16 @@
           <input type="email" id="email" placeholder="your.email@ericsson.com" required>
         </div>
 
-        <!-- Feedback Category -->
         <div class="form-group">
           <label>Feedback Category <span class="required">*</span></label>
           <p class="helper-text">Select all that apply</p>
           <div class="category-buttons">
             <label class="category-btn">
-              <input type="checkbox" name="category" value="add-in-functionality">
-              Add-in Functionality
+              <input type="checkbox" name="category" value="functionality">
+              Functionality
             </label>
             <label class="category-btn">
-              <input type="checkbox" name="category" value="user-interface">
+              <input type="checkbox" name="category" value="interface">
               User Interface
             </label>
             <label class="category-btn">
@@ -293,11 +260,11 @@
               Performance
             </label>
             <label class="category-btn">
-              <input type="checkbox" name="category" value="bug-report">
+              <input type="checkbox" name="category" value="bug">
               Bug Report
             </label>
             <label class="category-btn">
-              <input type="checkbox" name="category" value="feature-request">
+              <input type="checkbox" name="category" value="feature">
               Feature Request
             </label>
             <label class="category-btn">
@@ -307,7 +274,6 @@
           </div>
         </div>
 
-        <!-- Rating -->
         <div class="form-group">
           <label>Overall Satisfaction <span class="required">*</span></label>
           <p class="helper-text">How satisfied are you with this add-in?</p>
@@ -340,7 +306,6 @@
           </div>
         </div>
 
-        <!-- Feedback Details -->
         <div class="form-group">
           <label for="feedback">Your Feedback <span class="required">*</span></label>
           <textarea 
@@ -354,9 +319,8 @@
           </div>
         </div>
 
-        <!-- Suggestions -->
         <div class="form-group">
-          <label for="suggestions">Suggestions for Improvement (Optional)</label>
+          <label for="suggestions">Suggestions for Improvement</label>
           <textarea 
             id="suggestions" 
             placeholder="What features or improvements would you like to see?"
@@ -367,17 +331,14 @@
           </div>
         </div>
 
-        <!-- Contact Permission -->
         <div class="form-group">
-          <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-            <input type="checkbox" id="contactPermission" style="width: auto;">
+          <label class="checkbox-label">
+            <input type="checkbox" id="contactPermission">
             You may contact me for follow-up on this feedback
           </label>
         </div>
 
-        <button type="submit" class="btn btn-primary">
-          📤 Submit Feedback
-        </button>
+        <button type="submit" class="btn">Submit Feedback</button>
       </form>
     </div>
   </div>
@@ -388,7 +349,6 @@
     });
 
     function initializeForm() {
-      // Character counters
       const feedbackTextarea = document.getElementById('feedback');
       const suggestionsTextarea = document.getElementById('suggestions');
       const charCount = document.getElementById('charCount');
@@ -402,7 +362,6 @@
         suggestionCount.textContent = this.value.length;
       });
 
-      // Rating selection
       const ratingOptions = document.querySelectorAll('.rating-option');
       ratingOptions.forEach(option => {
         option.addEventListener('click', function() {
@@ -412,7 +371,6 @@
         });
       });
 
-      // Category selection
       const categoryButtons = document.querySelectorAll('.category-btn');
       categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -422,21 +380,18 @@
         });
       });
 
-      // Form submission
       document.getElementById('feedbackForm').addEventListener('submit', handleSubmit);
     }
 
     function handleSubmit(e) {
       e.preventDefault();
 
-      // Validate at least one category is selected
       const categories = document.querySelectorAll('input[name="category"]:checked');
       if (categories.length === 0) {
         alert('Please select at least one feedback category');
         return;
       }
 
-      // Collect form data
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -448,35 +403,20 @@
         timestamp: new Date().toISOString()
       };
 
-      // Log feedback data (in production, send to backend)
       console.log('Feedback submitted:', formData);
 
-      // Show success message
       const alert = document.getElementById('successAlert');
       alert.classList.add('show');
 
-      // Reset form
       document.getElementById('feedbackForm').reset();
       document.querySelectorAll('.rating-option').forEach(opt => opt.classList.remove('selected'));
       document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('selected'));
       document.getElementById('charCount').textContent = '0';
       document.getElementById('suggestionCount').textContent = '0';
 
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Hide success message after 5 seconds
       setTimeout(() => {
         alert.classList.remove('show');
-      }, 5000);
-
-      // In production, you would send this data to your backend
-      // Example:
-      // fetch('https://your-backend-api.com/feedback', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
+      }, 4000);
     }
   </script>
 </body>
