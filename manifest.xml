@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp">
+
+  <Id>c4b7f1a2-8d9a-4a7c-b321-123456789abc</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Mayank</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+
+  <DisplayName DefaultValue="Need Support"/>
+  <Description DefaultValue="Access IT Service Desk and support services for Ericsson employees"/>
+  <IconUrl DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/icon32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/icon@2x.png"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.8"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+  <Form xsi:type="ItemRead">
+    <DesktopSettings>
+      <SourceLocation DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/it-service-desk.html"/>
+      <RequestedHeight>250</RequestedHeight>
+    </DesktopSettings>
+  </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+
+  <VersionOverrides
+    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+    xsi:type="VersionOverridesV1_0">
+
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.8">
+        <bt:Set Name="Mailbox"/>
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="MailHost">
+        
+        <DesktopFormFactor>
+
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="NeedSupport">
+                <Label resid="groupLabel"/>
+
+                <!-- Need Support? Menu -->
+                <Control xsi:type="Menu" id="SupportMenu">
+                  <Label resid="supportMenuLabel"/>
+                  <Supertip>
+                    <Title resid="supportMenuLabel"/>
+                    <Description resid="supportMenuDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="supportIcon16"/>
+                    <bt:Image size="32" resid="supportIcon32"/>
+                    <bt:Image size="80" resid="supportIcon80"/>
+                  </Icon>
+                  <Items>
+                    <!-- IT Service Desk -->
+                    <Item id="ITServiceDesk">
+                      <Label resid="itServiceDeskLabel"/>
+                      <Supertip>
+                        <Title resid="itServiceDeskLabel"/>
+                        <Description resid="itServiceDeskDesc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="supportIcon16"/>
+                        <bt:Image size="32" resid="supportIcon32"/>
+                        <bt:Image size="80" resid="supportIcon80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="itServiceDeskUrl"/>
+                      </Action>
+                    </Item>
+
+                    <!-- My Support & Services -->
+                    <Item id="MySupport">
+                      <Label resid="mySupportLabel"/>
+                      <Supertip>
+                        <Title resid="mySupportLabel"/>
+                        <Description resid="mySupportDesc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="supportIcon16"/>
+                        <bt:Image size="32" resid="supportIcon32"/>
+                        <bt:Image size="80" resid="supportIcon80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="mySupportUrl"/>
+                      </Action>
+                    </Item>
+
+                    <!-- Create Signature -->
+                    <Item id="CreateSignature">
+                      <Label resid="signatureLabel"/>
+                      <Supertip>
+                        <Title resid="signatureLabel"/>
+                        <Description resid="signatureDesc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="supportIcon16"/>
+                        <bt:Image size="32" resid="supportIcon32"/>
+                        <bt:Image size="80" resid="supportIcon80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="signatureUrl"/>
+                      </Action>
+                    </Item>
+
+                    <!-- Provide Feedback -->
+                    <Item id="ProvideFeedback">
+                      <Label resid="feedbackLabel"/>
+                      <Supertip>
+                        <Title resid="feedbackLabel"/>
+                        <Description resid="feedbackDesc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="supportIcon16"/>
+                        <bt:Image size="32" resid="supportIcon32"/>
+                        <bt:Image size="80" resid="supportIcon80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="feedbackUrl"/>
+                      </Action>
+                    </Item>
+
+                    <!-- Need Support (Bottom) -->
+                    <Item id="NeedSupportBottom">
+                      <Label resid="needSupportBottomLabel"/>
+                      <Supertip>
+                        <Title resid="needSupportBottomLabel"/>
+                        <Description resid="needSupportBottomDesc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="supportIcon16"/>
+                        <bt:Image size="32" resid="supportIcon32"/>
+                        <bt:Image size="80" resid="supportIcon80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="needSupportBottomUrl"/>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <!-- Support Icons - Using GitHub hosted PNG files -->
+        <bt:Image id="supportIcon16" DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/support16.png"/>
+        <bt:Image id="supportIcon32" DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/support32.png"/>
+        <bt:Image id="supportIcon80" DefaultValue="https://raw.githubusercontent.com/mayankkkp/Outlook-Add-in/main/support80.png"/>
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="itServiceDeskUrl" DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/it-service-desk.html"/>
+        <bt:Url id="mySupportUrl" DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/my-support.html"/>
+        <bt:Url id="signatureUrl" DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/signature.html"/>
+        <bt:Url id="feedbackUrl" DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/feedback.html"/>
+        <bt:Url id="needSupportBottomUrl" DefaultValue="https://mayankkkp.github.io/Outlook-Add-in/need-support.html"/>
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Need Support"/>
+        <bt:String id="supportMenuLabel" DefaultValue="Need Support?"/>
+        <bt:String id="itServiceDeskLabel" DefaultValue="IT Service Desk"/>
+        <bt:String id="mySupportLabel" DefaultValue="My Support &amp; Services"/>
+        <bt:String id="signatureLabel" DefaultValue="Create Signature"/>
+        <bt:String id="feedbackLabel" DefaultValue="Provide Feedback"/>
+        <bt:String id="needSupportBottomLabel" DefaultValue="Need Support"/>
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="supportMenuDesc" DefaultValue="Access IT Service Desk and support services"/>
+        <bt:String id="itServiceDeskDesc" DefaultValue="For Basic Office &amp; Enterprise Support"/>
+        <bt:String id="mySupportDesc" DefaultValue="Single support interface for all Ericsson employees"/>
+        <bt:String id="signatureDesc" DefaultValue="Create or update your email signature"/>
+        <bt:String id="feedbackDesc" DefaultValue="Provide feedback about this add-in"/>
+        <bt:String id="needSupportBottomDesc" DefaultValue="General support options"/>
+      </bt:LongStrings>
+    </Resources>
+
+  </VersionOverrides>
+
+</OfficeApp>

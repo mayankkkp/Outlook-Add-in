@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Create Signature</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: white;
+      padding: 25px;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 26px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header p {
+      color: #7f8c8d;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .content {
+      background: white;
+      padding: 30px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Segoe UI', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .preview-section {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+      border: 2px dashed #dee2e6;
+    }
+
+    .preview-section h3 {
+      color: #2c3e50;
+      font-size: 16px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .signature-preview {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #2c3e50;
+    }
+
+    .signature-preview .name {
+      font-weight: bold;
+      font-size: 16px;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+
+    .signature-preview .title {
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+
+    .signature-preview .company {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .signature-preview .contact-info {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .signature-preview .contact-info div {
+      margin-bottom: 3px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #e9ecef;
+      color: #495057;
+    }
+
+    .btn-secondary:hover {
+      background: #dee2e6;
+    }
+
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    }
+
+    .alert {
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .alert.success {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      color: #065f46;
+    }
+
+    .alert.show {
+      display: block;
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: #6c757d;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✍️ Create Email Signature</h1>
+      <p>Design your professional email signature for Outlook</p>
+    </div>
+    
+    <div class="content">
+      <div id="successAlert" class="alert success">
+        ✅ Signature created successfully! You can now use it in your emails.
+      </div>
+
+      <form id="signatureForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" placeholder="e.g., John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="jobTitle">Job Title *</label>
+            <input type="text" id="jobTitle" placeholder="e.g., Senior Engineer" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text" id="department" placeholder="e.g., Engineering">
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company *</label>
+          <input type="text" id="company" value="Ericsson" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="john.doe@ericsson.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 XX XXXX XXXX">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g., Pune, India">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="url" id="website" placeholder="https://www.ericsson.com" value="https://www.ericsson.com">
+        </div>
+
+        <div class="preview-section">
+          <h3>👁️ Preview</h3>
+          <div id="signaturePreview" class="signature-preview">
+            <div class="name">Your Name</div>
+            <div class="title">Your Job Title</div>
+            <div class="company">Ericsson</div>
+            <div class="contact-info">
+              <div>📧 your.email@ericsson.com</div>
+              <div>📱 Your phone number</div>
+              <div>🌐 https://www.ericsson.com</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">
+            🔄 Reset
+          </button>
+          <button type="button" class="btn btn-primary" onclick="updatePreview()">
+            👁️ Update Preview
+          </button>
+          <button type="submit" class="btn btn-success">
+            ✅ Create Signature
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    Office.onReady(function() {
+      // Auto-update preview on input
+      const inputs = document.querySelectorAll('input, select, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', updatePreview);
+      });
+      
+      // Initialize preview
+      updatePreview();
+    });
+
+    function updatePreview() {
+      const fullName = document.getElementById('fullName').value || 'Your Name';
+      const jobTitle = document.getElementById('jobTitle').value || 'Your Job Title';
+      const department = document.getElementById('department').value;
+      const company = document.getElementById('company').value || 'Ericsson';
+      const email = document.getElementById('email').value || 'your.email@ericsson.com';
+      const phone = document.getElementById('phone').value;
+      const mobile = document.getElementById('mobile').value;
+      const location = document.getElementById('location').value;
+      const website = document.getElementById('website').value || 'https://www.ericsson.com';
+
+      let contactInfo = '';
+      if (email) contactInfo += `<div>📧 ${email}</div>`;
+      if (phone) contactInfo += `<div>📞 ${phone}</div>`;
+      if (mobile) contactInfo += `<div>📱 ${mobile}</div>`;
+      if (location) contactInfo += `<div>📍 ${location}</div>`;
+      if (website) contactInfo += `<div>🌐 ${website}</div>`;
+
+      const preview = `
+        <div class="name">${fullName}</div>
+        <div class="title">${jobTitle}${department ? ' | ' + department : ''}</div>
+        <div class="company">${company}</div>
+        <div class="contact-info">
+          ${contactInfo}
+        </div>
+      `;
+
+      document.getElementById('signaturePreview').innerHTML = preview;
+    }
+
+    function resetForm() {
+      document.getElementById('signatureForm').reset();
+      document.getElementById('company').value = 'Ericsson';
+      document.getElementById('website').value = 'https://www.ericsson.com';
+      updatePreview();
+    }
+
+    document.getElementById('signatureForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get the signature HTML
+      const signatureHTML = document.getElementById('signaturePreview').innerHTML;
+      
+      // Here you would typically set this as the signature in Outlook
+      // For now, we'll show a success message
+      const alert = document.getElementById('successAlert');
+      alert.classList.add('show');
+      
+      setTimeout(() => {
+        alert.classList.remove('show');
+      }, 5000);
+      
+      // Copy to clipboard
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = signatureHTML;
+      document.body.appendChild(tempDiv);
+      
+      const range = document.createRange();
+      range.selectNode(tempDiv);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      
+      try {
+        document.execCommand('copy');
+        console.log('Signature copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy signature');
+      }
+      
+      window.getSelection().removeAllRanges();
+      document.body.removeChild(tempDiv);
+    });
+  </script>
+</body>
+</html>
