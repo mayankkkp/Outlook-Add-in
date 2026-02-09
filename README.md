@@ -1,6 +1,6 @@
 Need Support – Outlook Add-in
 
-Need Support is a Microsoft Outlook add-in that provides Organization employees with quick access to IT support services directly from the Outlook message reading experience. It centralizes common support actions such as accessing the IT Service Desk, managing support services, creating email signatures, and providing feedback—without leaving Outlook.
+Need Support is a Microsoft Outlook add-in that provides Ericsson employees with quick access to IT support services directly from the Outlook message reading experience. It centralizes common support actions such as accessing the IT Service Desk, managing support services, creating email signatures, and providing feedback—without leaving Outlook.
 
 ✨ Features
 
